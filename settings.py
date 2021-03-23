@@ -81,7 +81,7 @@ MEDIA_URL = ''
 STATIC_URL = '/media/'
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = get_from_env('SECRET_KEY', 'testkey123')
+SECRET_KEY = get_from_env('SECRET_KEY', '')
 
 # If debug is set to false and ALLOWED_HOSTS is not declared, django raises  "CommandError: You must set settings.ALLOWED_HOSTS if DEBUG is False."
 # If in production, you got a bad request (400) error
@@ -178,7 +178,7 @@ LOGOUT_ON_CONFIRMATION = True
 
 # The two hosts are here so the main site can be over plain HTTP
 # while the voting URLs are served over SSL.
-URL_HOST = get_from_env("URL_HOST", "http://voting2.mathcs.carleton.edu:8000").rstrip("/")
+URL_HOST = get_from_env("URL_HOST", "").rstrip("/")
 
 # IMPORTANT: you should not change this setting once you've created
 # elections, as your elections' cast_url will then be incorrect.
@@ -196,7 +196,7 @@ FOOTER_LOGO_URL = get_from_env('FOOTER_LOGO_URL', None)
 
 WELCOME_MESSAGE = get_from_env('WELCOME_MESSAGE', "Carleton College CS Voting Comps")
 
-HELP_EMAIL_ADDRESS = get_from_env('HELP_EMAIL_ADDRESS', 'craigj2@carleton.edu')
+HELP_EMAIL_ADDRESS = get_from_env('HELP_EMAIL_ADDRESS', '')
 
 AUTH_TEMPLATE_BASE = "server_ui/templates/base.html"
 HELIOS_TEMPLATE_BASE = "server_ui/templates/base.html"
@@ -215,8 +215,8 @@ AUTH_ENABLED_SYSTEMS = get_from_env('AUTH_ENABLED_SYSTEMS',
 AUTH_DEFAULT_SYSTEM = get_from_env('AUTH_DEFAULT_SYSTEM', get_from_env('AUTH_DEFAULT_AUTH_SYSTEM', None))
 
 # google
-GOOGLE_CLIENT_ID = get_from_env('GOOGLE_CLIENT_ID', '303798829751-6mjs0rg51v4nq0agb3u8eqrmvasr7838.apps.googleusercontent.com')
-GOOGLE_CLIENT_SECRET = get_from_env('GOOGLE_CLIENT_SECRET', 'umrTGd5JIB-5pCfqr_7VpweH')
+GOOGLE_CLIENT_ID = get_from_env('GOOGLE_CLIENT_ID', '')
+GOOGLE_CLIENT_SECRET = get_from_env('GOOGLE_CLIENT_SECRET', '')
 
 # facebook
 FACEBOOK_APP_ID = get_from_env('FACEBOOK_APP_ID','')
