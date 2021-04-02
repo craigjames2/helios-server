@@ -1,7 +1,7 @@
 
 # a massive hack to see if we're testing, in which case we use different settings
 import sys
-
+from decouple import config
 import json
 import os
 
@@ -9,10 +9,7 @@ TESTING = 'test' in sys.argv
 
 # go through environment variables and override them
 def get_from_env(var, default):
-    if not TESTING and var in os.environ:
-        return os.environ[var]
-    else:
-        return default
+    return config(var,default=default)
 
 DEBUG = (get_from_env('DEBUG', '1') == '1')
 
@@ -81,7 +78,7 @@ MEDIA_URL = ''
 STATIC_URL = '/media/'
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = get_from_env('SECRET_KEY', '')
+SECRET_KEY = get_from_env('SECRET_KEY', 'replacewithenv')
 
 # If debug is set to false and ALLOWED_HOSTS is not declared, django raises  "CommandError: You must set settings.ALLOWED_HOSTS if DEBUG is False."
 # If in production, you got a bad request (400) error
@@ -169,8 +166,8 @@ VOTER_UPLOAD_REL_PATH = "voters/%Y/%m/%d"
 
 
 # Change your email settings
-DEFAULT_FROM_EMAIL = get_from_env('DEFAULT_FROM_EMAIL', 'ben@adida.net')
-DEFAULT_FROM_NAME = get_from_env('DEFAULT_FROM_NAME', 'Ben for Helios')
+DEFAULT_FROM_EMAIL = get_from_env('DEFAULT_FROM_EMAIL', '__ @carleton.edu')
+DEFAULT_FROM_NAME = get_from_env('DEFAULT_FROM_NAME', 'Carleton ___ Team')
 SERVER_EMAIL = '%s <%s>' % (DEFAULT_FROM_NAME, DEFAULT_FROM_EMAIL)
 
 LOGIN_URL = '/auth/'
@@ -178,7 +175,7 @@ LOGOUT_ON_CONFIRMATION = True
 
 # The two hosts are here so the main site can be over plain HTTP
 # while the voting URLs are served over SSL.
-URL_HOST = get_from_env("URL_HOST", "").rstrip("/")
+URL_HOST = get_from_env("URL_HOST", "http://localhost:8000").rstrip("/")
 
 # IMPORTANT: you should not change this setting once you've created
 # elections, as your elections' cast_url will then be incorrect.
@@ -194,7 +191,7 @@ ALLOW_ELECTION_INFO_URL = (get_from_env('ALLOW_ELECTION_INFO_URL', '0') == '1')
 FOOTER_LINKS = json.loads(get_from_env('FOOTER_LINKS', '[]'))
 FOOTER_LOGO_URL = get_from_env('FOOTER_LOGO_URL', None)
 
-WELCOME_MESSAGE = get_from_env('WELCOME_MESSAGE', "Carleton College CS Voting Comps")
+WELCOME_MESSAGE = get_from_env('WELCOME_MESSAGE', "Default message")
 
 HELP_EMAIL_ADDRESS = get_from_env('HELP_EMAIL_ADDRESS', '')
 
