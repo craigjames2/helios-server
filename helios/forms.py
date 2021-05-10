@@ -34,6 +34,21 @@ class ElectionForm(forms.Form):
   voting_ends_at = SplitDateTimeField(help_text = 'UTC date and time when voting ends',
                                    widget=SplitSelectDateTimeWidget, required=False)
 
+  #### MODULARITY FEATURES ####
+  modularity_text = forms.BooleanField(required=False, initial="", disabled=True, widget=forms.RadioSelect(), label="Verifiabiilty options", 
+  help_text= '''You can customize election verifiability by:\n restricting the votes that can be audited by non-adminstrators and whether administrators can audit. 
+  These options can be set separately for when the election is open and closed.
+  The default options are set to prevent attacks towards ballot secrecy''')
+  audit_perm_choices =  (
+    ('anyone', 'Anyone'),
+    ('themselves', 'Themselves'),
+    ('nobody', 'Nobody')
+    )
+  audit_perm_open = forms.ChoiceField(initial='nobody', label="Audit restriction when open", choices = audit_perm_choices, help_text='When the election is open, whose votes can be audited?')
+  audit_perm_close = forms.ChoiceField(initial='anyone', label="Audit restriction when closed", choices = audit_perm_choices, help_text='When the election is closed, whose votes can be audited?')
+  admin_perm_open = forms.BooleanField(required=False, initial=False, label="Admin permission when open", help_text='When the election is open, can administrators audit?')
+  admin_perm_close = forms.BooleanField(required=False, initial=True, label="Admin permission when closed", help_text='When the election is closed, can administrators audit?')
+  
 class ElectionTimeExtensionForm(forms.Form):
   voting_extended_until = SplitDateTimeField(help_text = 'UTC date and time voting extended to',
                                    widget=SplitSelectDateTimeWidget, required=False)
