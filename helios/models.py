@@ -86,6 +86,12 @@ class Election(HeliosModel):
   # randomize candidate order?
   randomize_answer_order = models.BooleanField(default=False, null=False)
   
+  # modularity fields
+  audit_perm_open = models.CharField(default='nobody', max_length=300, null=False)
+  audit_perm_close = models.CharField(default='anyone', max_length=300, null=False)
+  admin_perm_open = models.BooleanField(default=False, null=False)
+  admin_perm_close = models.BooleanField(default=True, null=False)
+
   # where votes should be cast
   cast_url = models.CharField(max_length = 500)
 
@@ -154,7 +160,11 @@ class Election(HeliosModel):
       'help_email': self.help_email or 'help@heliosvoting.org',
       'private_p': self.private_p,
       'use_advanced_audit_features': self.use_advanced_audit_features,
-      'randomize_answer_order': self.randomize_answer_order
+      'randomize_answer_order': self.randomize_answer_order,
+      'audit_perm_open':  self.audit_perm_open,
+      'audit_perm_close': self.audit_perm_close,
+      'admin_perm_open': self.admin_perm_open,
+      'admin_perm_close': self.admin_perm_close
       }
 
   @property
