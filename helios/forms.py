@@ -35,10 +35,10 @@ class ElectionForm(forms.Form):
                                    widget=SplitSelectDateTimeWidget, required=False)
 
   #### MODULARITY FEATURES ####
-  modularity_text = forms.BooleanField(required=False, initial="", disabled=True, widget=forms.RadioSelect(), label="Verifiabiilty options", 
-  help_text= '''You can customize election verifiability by:\n restricting the votes that can be audited by non-adminstrators and whether administrators can audit. 
-  These options can be set separately for when the election is open and closed.
-  The default options are set to prevent attacks towards ballot secrecy''')
+#   modularity_text = forms.BooleanField(required=False, initial="", disabled=True, widget=forms.RadioSelect(), label="Verifiabiilty options", 
+#   help_text= '''You can customize election verifiability by:\n restricting the votes that can be audited by non-adminstrators and whether administrators can audit. 
+#   These options can be set separately for when the election is open and closed.
+#   The default options are set to prevent attacks towards ballot secrecy''')
   audit_perm_choices =  (
     ('anyone', 'Anyone'),
     ('themselves', 'Themselves'),
