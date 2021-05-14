@@ -14,8 +14,16 @@ by <b><u>
 </u></b>
 <br /><br />
 
-{$ admin_p $}
-{$ election.admin_perm_open $}
+{% if admin_p %}
+hi
+{% else %}
+oh no
+{% endif %}
+{% if election.admin_perm_open %}
+hi again
+{% else %}
+oh nooo
+{% endif %}
 
 <!-- when election is open -->
 {% if not election.voting_has_stopped %}
