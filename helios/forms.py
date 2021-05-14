@@ -46,8 +46,8 @@ class ElectionForm(forms.Form):
     )
   audit_perm_open = forms.ChoiceField(initial='nobody', label="Audit restriction when open", choices = audit_perm_choices, help_text='When the election is open, whose votes can be audited?')
   audit_perm_close = forms.ChoiceField(initial='anyone', label="Audit restriction when closed", choices = audit_perm_choices, help_text='When the election is closed, whose votes can be audited?')
-  admin_perm_open = forms.BooleanField(required=False, initial=False, label="Admin permission when open", help_text='When the election is open, can administrators audit?')
-  admin_perm_close = forms.BooleanField(required=False, initial=True, label="Admin permission when closed", help_text='When the election is closed, can administrators audit?')
+  admin_perm_open = forms.BooleanField(required=False, initial=False, disabled=True, label="Admin permission when open", help_text='When the election is open, can administrators audit? This feature is currently not working.')
+  admin_perm_close = forms.BooleanField(required=False, initial=False, disabled=True, label="Admin permission when closed", help_text='When the election is closed, can administrators audit? This feature is currently not working.')
   
 class ElectionTimeExtensionForm(forms.Form):
   voting_extended_until = SplitDateTimeField(help_text = 'UTC date and time voting extended to',
