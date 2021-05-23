@@ -46,12 +46,6 @@ this {{election.election_type}} is <u>not</u> featured on the front page.
 {{election.description_bleached|safe}}
 </div>
 
-<p>
-{% if election.help_email and admin_p%}Help Email Address: {{election.help_email}}<br />{% endif %}
-{% if election.voting_start_at %}Voting start at {{election.voting_start_at}}<br />{% endif %}
-{% if election.voting_end_at %}Voting end at {{election.voting_end_at}}<br />{% endif %}
-</p>
-
 {% if election.election_info_url %}
 <p style="font-size:1.5em;">[<a target="_blank" href="{{election.election_info_url}}" rel="noopener noreferrer">download candidate bios &amp; statements</a>]</p>
 {% endif %}
@@ -181,6 +175,12 @@ Once you do this, the tally will visible to you, the administrator, only.
 {% else %}
 
 {% if election.voting_has_started %}
+
+{% if user %}
+{% else %}
+<p>You are <em>not</em> logged in. You will either need to log in now using the button at the top right of the page, or log in when prompted before submitting your vote.</p>
+{% endif %}
+
 <a class="button" href="{{test_cookie_url}}">Vote in this {{election.election_type}} </a>
 <br />
 <br />
