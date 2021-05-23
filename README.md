@@ -33,4 +33,13 @@ To the implement the verifiability options, we enabled or disabled access to vot
 
 ## Improvements on Helios usability
 
+Following feedback from independent studies (including our own), we made some modifications to the layout of the site. These are mostly cosmetic and helps ease the process for unfamiliar users. These include repositioning the login button, providing a notice of login status above the voting button on the main page, reformatting the next/previous/proceed buttons, repositioning the audit button, and various updates to language for precision, comprehensibility and removing redundancy.
+
 ### Code changes
+
+We made changes in in the following files.
+heliosbooth/templates/audit.html
+heliosbooth/templates/question.html
+heliosbooth/templates/seal.html
+heliosbooth/vote.html
+server_ui/templates/base.html
