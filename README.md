@@ -29,7 +29,11 @@ To the implement the verifiability options, we enabled or disabled access to vot
 
 ## Disabling private elections
 
+Helios allows private elections, where the administrator provides a list of eliglible voters and their emails and Helios sends to those voters passwords to vote. However, the emails are never sent due to Helios' email server issues. In other words, private elections are not working. Thus, we've decided to disable the feature altogether.
+
 ### Code changes
+
+Files that we changed to implement this include `helios/forms.py` and `templates/voters_list.html`. Code related to private elections were commented out.
 
 ## Improvements on Helios usability
 
@@ -38,8 +42,8 @@ Following feedback from independent studies (including our own), we made some mo
 ### Code changes
 
 We made changes in in the following files.
-heliosbooth/templates/audit.html
-heliosbooth/templates/question.html
-heliosbooth/templates/seal.html
-heliosbooth/vote.html
-server_ui/templates/base.html
+- heliosbooth/templates/audit.html
+- heliosbooth/templates/question.html
+- heliosbooth/templates/seal.html
+- heliosbooth/vote.html
+- server_ui/templates/base.html
