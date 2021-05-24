@@ -1,15 +1,20 @@
 # Carleton Helios
 
-This is part of the Voting machine comps of the 2020-21 Carleton CS comps. 
+This is part of the Electronic Voting Machine project of the 2020-21 Carleton CS comps. 
 
 Advisor: Sneha Narayan 
 
-Members: Harry, James, John, Judy, Kate, Matthew
+Members: James, John, Judy, Kate, Matthew, Harry
 
-This project is based off of [Helios Voting](https://vote.heliosvoting.org/), a web-based open-audit electronic voting system. In our implementation, we added three features:
+Our project dug into electronic voting machines (EVMs) and what must be done to ensure that they are secure, usable, and trustworthy. A major component of the project is to explore EVM issues through the framework of an existing EVM, Helios. [Helios Voting](https://vote.heliosvoting.org/) is a web-based open-audit electronic voting system. After analyzin Helios and the issues behind it using our threat model, we modified Helios in several ways:
+
 1. A customizable verifiability features that allow administrators to customize the election's degree of verifiability/ballot secrecy.
 2. The email server for private election is not working so we disabled private elections altogether.
 3. We made some improvements to Helios usability and designs.
+
+Details about our threat model and analyze can be find on our [website](...)
+
+Special thanks to our advisor Sneha for guiding us through this project and to Mike Tie for helping us troubleshoot Helios on our remote server.
 
 ## Customizable verifiability
 
