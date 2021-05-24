@@ -34,7 +34,7 @@ youre not an admin
 <p>The verifiability feature is disabled.</p>
 {% endif %}
 <!-- when election is closed -->
-{% else }
+{% else %}
 <!-- audit_perm_close -->
 {% if election.audit_perm_close == "themselves" or election.audit_perm_close == "anyone" %}
 <a href="#" onclick="$('#castvote_content').slideToggle(250); return false;">details</a><br /><br />
