@@ -12,7 +12,7 @@ Our project dug into electronic voting machines (EVMs) and what must be done to 
 2. The email server for private election is not working so we disabled private elections altogether.
 3. We made some improvements to Helios usability and designs.
 
-Details about our threat model and analyze can be find on our [website](...)
+Details about our threat model and analyze can be find on our [website](https://cs.carleton.edu/cs_comps/2021/votingmachines/final-results/index.html)
 
 Special thanks to our advisor Sneha for guiding us through this project and to Mike Tie for helping us troubleshoot Helios on our remote server.
 
