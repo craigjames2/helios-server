@@ -4,7 +4,7 @@ This is part of the Electronic Voting Machine project of the 2020-21 Carleton CS
 
 Advisor: Sneha Narayan 
 
-Members: James, John, Judy, Kate, Matthew, Harry
+Members: James Craig, John Sherer, Judy Bush, Kate Sweeney, Matthew Stritzel, Harry Tian
 
 Our project dug into electronic voting machines (EVMs) and what must be done to ensure that they are secure, usable, and trustworthy. A major component of the project is to explore EVM issues through the framework of an existing EVM, Helios. [Helios Voting](https://vote.heliosvoting.org/) is a web-based open-audit electronic voting system. After analyzin Helios and the issues behind it using our threat model, we modified Helios in several ways:
 
